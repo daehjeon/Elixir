@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main-container">
+  <div class="header">
+    <button class="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>view_week</mat-icon>
+        <span>Exposure Hierarchy</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>share</mat-icon>
+        <span>Shared Content</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+    </mat-menu>
+
+    <h1 class="app-title">Elixir</h1>
+  </div>
+  <div class="content">
+<!--    <app-home></app-home>-->
+    <app-hierarchy></app-hierarchy>
+  </div>
+</div>

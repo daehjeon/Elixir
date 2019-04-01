@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.modalbox {
+  mat-dialog-container {
+
+    h2 {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    p {
+      font-family: Avenir LT Std;
+      font-size: 18px;
+      line-height: 24px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #000000;
+    }
+
+    h3 {
+      font-family: Avenir LT Std;
+      font-size: 18px;
+      line-height: 24px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #000000;
+    }
+
+
+    mat-slider {
+      width: 100%;
+
+      .mat-slider-thumb{
+        width: 19px;
+        height: 19px;
+      }
+
+      .mat-slider-thumb,
+      .mat-slider-track-fill,
+      .mat-slider-thumb-label {
+        background-color: #00C4A1 !important;
+      }
+
+      .mat-slider-thumb-label-text{
+        color: white !important;
+      }
+    }
+  }
+
+  mat-dialog-actions {
+    button {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.16px;
+      text-transform: uppercase;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #00C4A1;
+    }
+  }
+}
+
+
+/* Text styles */
+
+@font-face {
+  font-family: "Avenir LT Std";
+  src: url("assets/fonts/avenir-lt-std/AvenirLTStd-Medium.otf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/roboto/Roboto-Regular.ttf");
+}
+
+@media screen and (max-width: 480px) {
+  body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+

@@ -1,0 +1,41 @@
+<div class="hierarchy-container" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <h2>Exposure hierarchy</h2>
+  <div class="task-lists" fxLayout="column" fxLayoutAlign=" stretch">
+    <div class="task-box" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="15" class="number">1</div>
+      <div fxFlex="70" class="task">Message a friend about an assignment</div>
+      <div fxFlex="15" class="scale">11</div>
+    </div>
+    <div class="task-box" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="15" class="number">1</div>
+      <div fxFlex="70" class="task">Message a friend about an assignment</div>
+      <div fxFlex="15" class="scale">11</div>
+    </div>
+  </div>
+  <button mat-fab class="add-task" (click)="addTask();">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+
+<ng-template #addTaskDialog class="addTaskDialog">
+  <h2 matDialogTitle>New Task</h2>
+  <mat-dialog-content>
+    <mat-form-field class="task-title">
+      <input matInput #taskTitle placeholder="Task Title">
+    </mat-form-field>
+
+    <h3>Rate your anxiety for the task</h3>
+    <mat-slider class="task-anxiety"
+                [thumbLabel]="true"
+                [(ngModel)]="anxietyScale"
+                [step]="1"
+                [max]="100"
+                [min]="1">
+    </mat-slider>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true">Save</button>
+    <button mat-button [mat-dialog-close]="false">Cancel</button>
+  </mat-dialog-actions>
+</ng-template>

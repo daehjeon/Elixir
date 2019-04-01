@@ -1,0 +1,101 @@
+.home-container{
+  padding: 0 20px;
+  h2{
+    font-family: Avenir LT Std;
+    font-size: 28px;
+    line-height: 48px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+  }
+
+  span {
+    font-family: Avenir LT Std;
+    font-size: 16px;
+    line-height: 40px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+  }
+
+  .cdk-grey{
+    margin: 0 auto;
+    width: 315px;
+    height: 60px;
+
+    background: rgba(102, 102, 102, 0.33);
+    border-radius: 10px;
+
+    p{
+      margin-top: 5px;
+      width: inherit;
+      height: inherit;
+
+      font-family: Avenir LT Std;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.16px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #FFFFFF;
+    }
+  }
+
+  .boxes {
+    width: unquote("calc(100% + 20px)");
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      background: transparent;
+    }
+
+    .box {
+      background: #FFFFFF;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      position: relative;
+      min-width: 230px;
+      height: 285px;
+      padding: 0px 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+
+      h2{
+        font-family: Avenir LT Std;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #000000;
+      }
+
+      span{
+        font-family: Avenir LT Std;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #00BA86;
+
+        &.status{
+          font-family: Avenir LT Std;
+          font-size: 9px;
+          line-height: 24px;
+          letter-spacing: 0.16px;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+
+          color: #000000;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
