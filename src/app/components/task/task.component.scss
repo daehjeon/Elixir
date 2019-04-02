@@ -1,0 +1,122 @@
+.task-container{
+  background: white;
+  width: 100%;
+  height: 100%;
+
+  .instruction,
+  .rate-anxiety{
+    padding: 30px;
+  }
+
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #666666;
+  }
+
+  .complete-task{
+    height: 100%;
+    background: linear-gradient(210.38deg, #4EC5AC 3.05%, #03BB88 85.13%);
+    padding: 100px 30px;
+
+    h1{
+      font-family: Avenir LT Std;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #FFFFFF;
+      margin: 0;
+      padding: 10px 20px;
+    }
+
+    h2{
+      font-family: Avenir LT Std;
+      font-size: 28px;
+      line-height: 48px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #FFFFFF;
+    }
+
+    span {
+      font-family: Avenir LT Std;
+      font-size: 16px;
+      line-height: 40px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: #FFFFFF;
+    }
+
+    .cdk-grey{
+      margin: 0 auto;
+      width: 315px;
+
+      background: rgba(102, 102, 102, 0.33);
+      border-radius: 10px;
+
+      p{
+        margin-top: 5px;
+        width: inherit;
+        height: inherit;
+
+        font-family: Avenir LT Std;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.16px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .complete-btn{
+      width: 146px;
+      height: 36px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+      font-family: Avenir LT Std;
+      font-size: 18px;
+      line-height: 24px;
+      text-align: right;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      margin: 0 auto;
+      color: #666666;
+    }
+
+    .come-back{
+      margin: 0 auto;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+  h1{
+    font-family: Avenir LT Std;
+    font-size: 36px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.16px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    margin:0;
+    margin-top: 70px;
+    color: #666666;
+  }
+
+  .subtitle{
+    font-family: Avenir LT Std;
+    font-size: 24px;
+    line-height: 24px;
+
+    color: #00BA86;
+  }
+
+  p{
+    font-family: Avenir LT Std;
+    font-size: 24px;
+    line-height: 20px;
+    color: black;
+  }
+}

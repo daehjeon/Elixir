@@ -1,6 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+.green-btn{
+  width: 100px;
+  height: 45px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+  background: #00C4A1;
+  border-radius: 2px;
+
+  font-family: Avenir LT Std;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: right;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #FFFFFF;
+}
+
+mat-slider {
+  width: 100%;
+
+  .mat-slider-thumb{
+    width: 19px;
+    height: 19px;
+  }
+
+  .mat-slider-thumb,
+  .mat-slider-track-fill,
+  .mat-slider-thumb-label {
+    background-color: #00C4A1 !important;
+  }
+
+  .mat-slider-thumb-label-text{
+    color: white !important;
+  }
+}
+
 .modalbox {
   mat-dialog-container {
 
@@ -30,26 +64,6 @@
       font-feature-settings: 'pnum' on, 'lnum' on;
 
       color: #000000;
-    }
-
-
-    mat-slider {
-      width: 100%;
-
-      .mat-slider-thumb{
-        width: 19px;
-        height: 19px;
-      }
-
-      .mat-slider-thumb,
-      .mat-slider-track-fill,
-      .mat-slider-thumb-label {
-        background-color: #00C4A1 !important;
-      }
-
-      .mat-slider-thumb-label-text{
-        color: white !important;
-      }
     }
   }
 

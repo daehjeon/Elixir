@@ -1,0 +1,87 @@
+<div class="task-container" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <button mat-icon-button class="close-btn" (click)="closeTask();">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div *ngIf="step == 1" class="instruction" fxLayout="column" fxLayoutAlign="space-between stretch">
+    <h1>Smile at a stranger</h1>
+    <span class="subtitle">Description</span>
+    <p>
+    On your way grocery shopping this weekend, try to make eye contact and smile at 3 people on the way there and the way back.
+
+    Purpose
+
+    Making eye contact is one way to enter a conversation. Also this task allows me to interact with strangers without having to speak to them.
+
+    Coping skills
+
+    Use 5-4-3-2-1 strategy (see, feel hear)
+
+    Things to avoid
+
+      Try not to avoid people by isolating yourself (e.g. sitting in an empty section on the bus)
+    </p>
+    <button mat-raised-button class="green-btn" (click)="step = step+1">Start</button>
+  </div>
+
+  <div *ngIf="step == 2" class="rate-anxiety" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="50px">
+    <h1>Smile at a stranger</h1>
+    <span class="subtitle">Rate your anxiety</span>
+
+    <mat-slider class="task-anxiety"
+                [thumbLabel]="true"
+                [(ngModel)]="anxietyScale"
+                [step]="1"
+                [max]="100"
+                [min]="1">
+    </mat-slider>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" >
+      <button mat-raised-button class="green-btn" (click)="step = step-1">Previous</button>
+      <button mat-raised-button class="green-btn" (click)="step = step+1">Next</button>
+    </div>
+  </div>
+
+  <div *ngIf="step == 3" class="rate-anxiety" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="50px">
+    <h1>Smile at a stranger</h1>
+    <span class="subtitle">What are your negative thoughts</span>
+
+    <mat-form-field>
+      <input matInput #negativeThoughts maxlength="256">
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="space-between stretch" >
+      <button mat-raised-button class="green-btn" (click)="step = step-1">Previous</button>
+      <button mat-raised-button class="green-btn" (click)="step = step+1">Next</button>
+    </div>
+  </div>
+
+  <div *ngIf="step == 4" class="complete-task" fxLayout="column" fxLayoutAlign=" stretch" fxLayoutGap="40px">
+    <h2>You are good to go!</h2>
+    <span>Try it out:</span>
+
+    <div class="cdk-grey">
+      <h1>Smile at a stranger</h1>
+    </div>
+    <div fxLayout="column" fxLayoutAlign=" stretch">
+      <button mat-raised-button class="complete-btn" (click)="completeTask();">
+        <i class="material-icons">done</i>
+        Complete
+      </button>
+      <span class="come-back" (click)="closeTask();">Come back later</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #shareDialog class="shareDialog">
+  <h2 matDialogTitle>Share your progress</h2>
+  <mat-dialog-content>
+    <p>
+      Do you want to share your reflection and progress with your therapists?
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true">Yes</button>
+    <button mat-button [mat-dialog-close]="false">No</button>
+  </mat-dialog-actions>
+</ng-template>
+

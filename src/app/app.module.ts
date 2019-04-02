@@ -8,14 +8,18 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from "./material.module";
 import { HomeComponent } from './components/home/home.component';
 import { HierarchyComponent } from './components/hierarchy/hierarchy.component';
+import { TaskComponent } from "./components/task/task.component";
 import { GestureConfig } from '@angular/material';
 import 'hammerjs';
+import { ApiService } from './services/api.service';
+import { ElixirListener } from './services/elixir.listener';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HierarchyComponent
+    HierarchyComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,12 @@ import 'hammerjs';
     FlexLayoutModule,
     MaterialModule
   ],
-  providers: [{ provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+    ElixirListener,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

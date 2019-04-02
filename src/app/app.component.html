@@ -5,11 +5,11 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="changeMoce('home');">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="changeMoce('hierarchy');">
         <mat-icon>view_week</mat-icon>
         <span>Exposure Hierarchy</span>
       </button>
@@ -30,7 +30,10 @@
     <h1 class="app-title">Elixir</h1>
   </div>
   <div class="content">
-<!--    <app-home></app-home>-->
-    <app-hierarchy></app-hierarchy>
+    <app-home *ngIf="mode === 'home'" (taskEmitter)="openTask($event);"></app-home>
+    <app-hierarchy *ngIf="mode === 'hierarchy'" ></app-hierarchy>
+    <app-task class="transition" [ngClass]="taskScreenOpened ? '' : 'hidden'"
+              (taskEmitter)="openTask($event);"
+              [taskId]="taskId"></app-task>
   </div>
 </div>
