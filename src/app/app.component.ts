@@ -18,11 +18,10 @@ export class AppComponent {
   ngOnInit() {
     this.elixirListener.changeMode(this.mode).subscribe((mode)=>{
       this.mode = <string>mode;
-      // this.appContainer.nativeElement.scrollTop = 0;
     });
   }
 
-  changeMoce(mode){
+  changeMode(mode){
     this.elixirListener.changeMode(mode);
   }
 
@@ -34,6 +33,5 @@ export class AppComponent {
     }else{
       this.taskScreenOpened = true;
     }
-    console.log(taskId);
   }
 }

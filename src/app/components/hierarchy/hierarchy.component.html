@@ -1,15 +1,10 @@
 <div class="hierarchy-container" fxLayout="column" fxLayoutAlign="space-between stretch">
   <h2>Exposure hierarchy</h2>
   <div class="task-lists" fxLayout="column" fxLayoutAlign=" stretch">
-    <div class="task-box" fxLayout="row" fxLayoutAlign="space-between center">
-      <div fxFlex="15" class="number">1</div>
-      <div fxFlex="70" class="task">Message a friend about an assignment</div>
-      <div fxFlex="15" class="scale">11</div>
-    </div>
-    <div class="task-box" fxLayout="row" fxLayoutAlign="space-between center">
-      <div fxFlex="15" class="number">1</div>
-      <div fxFlex="70" class="task">Message a friend about an assignment</div>
-      <div fxFlex="15" class="scale">11</div>
+    <div class="task-box" *ngFor="let task of tasks; let i = index" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="20" class="number">{{i+1}}</div>
+      <div fxFlex="65" class="task">{{task.TaskName}}</div>
+      <div fxFlex="15" class="scale">{{task.HierarchyRating}}</div>
     </div>
   </div>
   <button mat-fab class="add-task" (click)="addTask();">
@@ -22,7 +17,7 @@
   <h2 matDialogTitle>New Task</h2>
   <mat-dialog-content>
     <mat-form-field class="task-title">
-      <input matInput #taskTitle placeholder="Task Title">
+      <input matInput #taskTitle placeholder="Task Title" [(ngModel)]="task">
     </mat-form-field>
 
     <h3>Rate your anxiety for the task</h3>

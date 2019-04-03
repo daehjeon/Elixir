@@ -5,23 +5,23 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="changeMoce('home');">
+      <button mat-menu-item (click)="changeMode('home');">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item (click)="changeMoce('hierarchy');">
+      <button mat-menu-item (click)="changeMode('hierarchy');">
         <mat-icon>view_week</mat-icon>
         <span>Exposure Hierarchy</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item disabled>
         <mat-icon>share</mat-icon>
         <span>Shared Content</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item disabled>
         <mat-icon>person</mat-icon>
         <span>Profile</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item disabled>
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
       </button>

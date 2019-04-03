@@ -4,22 +4,10 @@
   </button>
 
   <div *ngIf="step == 1" class="instruction" fxLayout="column" fxLayoutAlign="space-between stretch">
-    <h1>Smile at a stranger</h1>
+    <h1>{{task?.TaskName}}</h1>
     <span class="subtitle">Description</span>
     <p>
-    On your way grocery shopping this weekend, try to make eye contact and smile at 3 people on the way there and the way back.
-
-    Purpose
-
-    Making eye contact is one way to enter a conversation. Also this task allows me to interact with strangers without having to speak to them.
-
-    Coping skills
-
-    Use 5-4-3-2-1 strategy (see, feel hear)
-
-    Things to avoid
-
-      Try not to avoid people by isolating yourself (e.g. sitting in an empty section on the bus)
+      {{task?.TaskDescription}}
     </p>
     <button mat-raised-button class="green-btn" (click)="step = step+1">Start</button>
   </div>
@@ -46,7 +34,7 @@
     <span class="subtitle">What are your negative thoughts</span>
 
     <mat-form-field>
-      <input matInput #negativeThoughts maxlength="256">
+      <input matInput #negativeThoughts maxlength="256" [(ngModel)]="reflection">
     </mat-form-field>
 
     <div fxLayout="row" fxLayoutAlign="space-between stretch" >
@@ -60,7 +48,7 @@
     <span>Try it out:</span>
 
     <div class="cdk-grey">
-      <h1>Smile at a stranger</h1>
+      <h1>{{task?.TaskName}}</h1>
     </div>
     <div fxLayout="column" fxLayoutAlign=" stretch">
       <button mat-raised-button class="complete-btn" (click)="completeTask();">

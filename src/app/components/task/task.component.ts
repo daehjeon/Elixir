@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from "@angular/material";
+import { ApiService } from "../../services/api.service";
 
 @Component({
   selector: 'app-task',
@@ -8,32 +9,58 @@ import { MatDialog } from "@angular/material";
 })
 export class TaskComponent implements OnInit {
 
-  step = 4;
+  task;
+  step = 1;
   anxietyScale;
-  @Input() taskId;
+  reflection;
+
+  private _taskId = '';
+
+  @Input()
+  set taskId(taskId: string) {
+    this._taskId = taskId || null;
+    console.log(this._taskId);
+
+    if (this._taskId) {
+      this.apiService.getTask(this._taskId).subscribe((task:any) => {
+        this.task = task.data[0];
+        console.log(this.task);
+      });
+    }
+  }
+
+  //@Input() taskId;
   @Output() taskEmitter = new EventEmitter();
   @ViewChild('shareDialog') shareDialog: TemplateRef<any>;
 
-  constructor(private dialog: MatDialog) { }
-
-  ngOnInit() {
+  constructor(private dialog: MatDialog,
+              private apiService: ApiService) {
   }
 
-  closeTask(){
+  ngOnInit() {
+    console.log(this.taskId);
+  }
+
+  closeTask() {
+    this.step = 1;
     this.taskEmitter.emit(null);
   }
 
-  completeTask(){
-    console.log(this.taskId);
+  completeTask() {
     const dialogRef = this.dialog.open(this.shareDialog, {
       width: '250px',
       panelClass: 'modalbox'
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result){
-
+      let isShared = 0;
+      if (result) {
+        isShared = 1;
       }
+
+      this.apiService.updateTask(this.reflection, this.anxietyScale, this._taskId, isShared).subscribe((res:any) => {
+        console.log(res);
+      });
       this.closeTask();
     });
   }
