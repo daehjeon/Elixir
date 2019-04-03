@@ -3,13 +3,25 @@
     <mat-icon>close</mat-icon>
   </button>
 
-  <div *ngIf="step == 1" class="instruction" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div *ngIf="step == 1" class="instruction" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="20px">
     <h1>{{task?.TaskName}}</h1>
-    <span class="subtitle">Description</span>
-    <p>
-      {{task?.TaskDescription}}
-    </p>
-    <button mat-raised-button class="green-btn" (click)="step = step+1">Start</button>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" >
+      <span class="subtitle">Description</span>
+      <p>{{task?.TaskDescription}}</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" >
+      <span class="subtitle">Purpose</span>
+      <p>{{task?.TaskPurpose}}</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" >
+      <span class="subtitle">Coping Skills</span>
+      <p>{{task?.TaskCopingSkills}}</p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" >
+      <span class="subtitle">Things to avoid</span>
+      <p>{{task?.TaskSafetyBehave}}</p>
+    </div>
+    <button mat-raised-button style="margin-left: auto;" class="green-btn" (click)="step = step+1">Start</button>
   </div>
 
   <div *ngIf="step == 2" class="rate-anxiety" fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="50px">

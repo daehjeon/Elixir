@@ -1,11 +1,19 @@
+:host{
+  align-items: stretch;
+  display: flex;
+}
+
 .task-container{
   background: white;
   width: 100%;
-  height: 100%;
 
   .instruction,
   .rate-anxiety{
     padding: 30px;
+  }
+
+  .rate-anxiety{
+    height: 100vh;
   }
 
   .close-btn{
@@ -96,7 +104,7 @@
   h1{
     font-family: Avenir LT Std;
     font-size: 36px;
-    line-height: 24px;
+    line-height: 36px;
     text-align: center;
     letter-spacing: 0.16px;
     font-feature-settings: 'pnum' on, 'lnum' on;
@@ -115,8 +123,8 @@
 
   p{
     font-family: Avenir LT Std;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 20px;
-    color: black;
+    color: darkgray;
   }
 }

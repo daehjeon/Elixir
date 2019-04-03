@@ -43,7 +43,7 @@
 
     app-task{
       position: absolute;
-      height: 100%;
+      overflow-y: scroll;
       width: 100%;
       //opacity: 1;
       top: 0px;

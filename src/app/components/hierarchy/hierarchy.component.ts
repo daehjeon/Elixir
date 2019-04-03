@@ -32,9 +32,10 @@ export class HierarchyComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.tasks.push({TaskName: this.task, HierarchyRating: this.anxietyScale})
+
       if (result){
         this.apiService.createTask(this.task, this.anxietyScale).subscribe((res:any) => {
-          this.tasks.push({TaskName: this.task, HierarchyRating: this.anxietyScale})
           console.log(res);
         });
       }
